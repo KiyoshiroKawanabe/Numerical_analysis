@@ -9,11 +9,11 @@ double f(int x){
 
 int n, i;
 double delta = 0;
-double s_1 = 0, s_2 = 0, s = 0;
+double s_1 = 0, s_2 = 0, s_3 = 0, s = 0;
 double y[1000];
 
 int main(){
-  printf("台形公式を行います\n積分区間は何等分しますか？\n");
+  printf("シンプソン法を行います\n積分区間は何等分しますか？\n");
   scanf("%d", &n);
 
   delta = 3 / n;
@@ -22,13 +22,14 @@ int main(){
     y[i] = f(i);
   }
 
-  s_1 = (y[0] + y[n]) / 2;
-
-  for(int t = 1; t < n; t++){
+  s_1 = (y[0] + y[n]);
+  for(int t=1; t<n; t=t+2){
     s_2 = s_2 + y[t];
   }
-
-  s = delta * (s_1 + s_2);
+  for(int e=2; e<n; e=e+2){
+    s_3 = s_3 + y[e];
+  }
+  s = delta * ((s_1) + (4 * s_2) + (2 * s_3)) / 3;
 
   printf("答えは%lfです\n", s);
 
