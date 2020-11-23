@@ -23,16 +23,13 @@ int main(){
   }
 
   s_1 = (y[0] + y[n]);
-
-  for(int t=1; t<n; t=t+1){
+  for(int t=1; t<n; t=t+2){
     s_2 = s_2 + y[t];
   }
-
   for(int e=2; e<n; e=e+2){
     s_3 = s_3 + y[e];
   }
-
-  s = delta / 3 * (s_1 + 4 * s_2 + 2 * s_3);
+  s = delta * ((s_1) + (4 * s_2) + (2 * s_3)) / 3;
 
   printf("答えは%lfです\n", s);
 
