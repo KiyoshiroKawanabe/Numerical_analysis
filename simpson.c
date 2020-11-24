@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <math.h>
 
 double f(int x){
   double fx = 0;
@@ -7,8 +6,8 @@ double f(int x){
   return fx;
 }
 
-int n, i;
-double delta = 0;
+int n, a;
+double delta, i;
 double s_1 = 0, s_2 = 0, s_3 = 0, s = 0;
 double y[1000];
 
@@ -16,13 +15,14 @@ int main(){
   printf("シンプソン法を行います\n積分区間は何等分しますか？\n");
   scanf("%d", &n);
 
-  delta = 3 / n;
+  delta = (double) 3 / n;
 
-  for(i = 0; i <= n; i++){
-    y[i] = f(i);
+  for(i = 0, a = 0; a <= n; i = i + delta, a++){
+    y[a] = f(i);
   }
 
   s_1 = (y[0] + y[n]);
+
   for(int t=1; t<n; t=t+2){
     s_2 = s_2 + y[t];
   }
@@ -35,4 +35,8 @@ int main(){
 
   return 0;
 }
+
+
+
+
 
