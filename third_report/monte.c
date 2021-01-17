@@ -24,7 +24,7 @@ int main(){
     if((x-0.5)*(x-0.5) + (y-0.5)*(y-0.5) <= 0.25)
       count++;
   }
-  /*円周率PIｎの計算*/
+  /*円周率PIの計算*/
   PI = (double)count / max * 4;
   printf("円周率は%f\n", PI);
 
